@@ -1,1 +1,1 @@
-./report.sh
+just ./report.sh
