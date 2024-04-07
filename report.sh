@@ -2,6 +2,13 @@ export LCOV="lcov --rc lcov_branch_coverage=1"
 export WEB_BROWSER="firefox"
 
 mkdir -p report
+mkdir -p build
+cd build
+cmake ..
+make -j
+./unit_test
+cd ..
+
 $LCOV -c -d ./build  -b src/ -o ./report/main.info
 $LCOV --remove ./report/main.info "*/googletest/*" -o ./report/main.info
 $LCOV --remove ./report/main.info "*/ut_src/*" -o ./report/main.info

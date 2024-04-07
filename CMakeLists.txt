@@ -28,5 +28,5 @@ include_directories(${PROJECT_DIR}/googletest/googlemock/include)
 link_libraries(-lrt -lm gtest gmock gtest_main -lpthread)
 
 # add_subdirectory(src)
-file(GLOB UNITEST_SOURCES src/*.cpp)
+file(GLOB UNITEST_SOURCES src/*.cpp ut_src/*.cpp)
 add_executable(unit_test ${UNITEST_SOURCES})
